@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Victoria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ysabeau+SC&family=Poetsen+One&family=Permanent+Marker&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo.png " alt="Pets Victoria Logo"></a>
+            <select id="pageSelector" onchange="navigateToPage()">
+                <option value="index.html" selected>Select an option</option>
+                <option value="index.html">Home</option>
+                <option value="pets.html">Pets</option>
+                <option value="add.html">Add More</option>
+                <option value="gallery.html">Gallery</option>
+            </select>
+            <form>
+                <input type="text" placeholder="Search...">
+                <button type="submit" class="search-button">
+                    <span class="material-icons">search</span>
+                </button>
+            </form>
+        </nav>
+    </header>
+    <h2>Pets Victoria has a lot to offer!</h2>
+    <p class = "second">For almost two decades, Pets Victoria has helped in creating true social change by bringing pet adoption into the mainstream. Our work has helped make a difference to the Victorian rescue community and thousands of pets in need of rescue and rehabilitation. But, until every pet is safe, respected, and loved, we all still have big, hairy work to do.</p>
+    <main>
+        <div class="gallery">
+            <div class="image-box">
+                <img src="images/cat1.jpeg" alt="Image 1">
+                <div class="overlay">
+                    <span class="material-icons">search</span>
+                    <p>Discover More!</p>
+                </div>
+
+                <p class="third">Milo</p>
+            </div>
+            <div class="image-box">
+                <img src="images/dog1.jpeg" alt="Image 2">
+                <div class="overlay">
+                    <span class="material-icons">search</span>
+                    <p>Discover More!</p>
+                </div>
+
+                <p class="third">Baxter</p>
+            </div>
+
+            <div class="image-box">
+                <img src="images/cat2.jpeg" alt="Image 3">
+                <div class="overlay">
+                    <span class="material-icons">search</span>
+                    <p>Discover More!</p>
+                </div>
+
+                <p class="third">Luna</p>
+            </div>
+
+            <div class="image-box">
+                <img src="images/dog2.jpeg" alt="Image 4">
+                <div class="overlay">
+                    <span class="material-icons">search</span>
+                    <p>Discover More!</p>
+                </div>
+
+                <p class="third">Willow</p>
+            </div>
+
+            <div class="image-box">
+                <img src="images/cat4.jpeg" alt="Image 5">
+                <div class="overlay">
+                    <span class="material-icons">search</span>
+                    <p>Discover More!</p>
+                </div>
+
+                <p class="third">Oliver</p>
+            </div>
+
+
+            <div class="image-box">
+                <img src="images/dog3.jpeg" alt="Image 6">
+                <div class="overlay">
+                    <span class="material-icons">search</span>
+                    <p>Discover More!</p>
+            </div>
+
+            <p class="third">Bella</p>
+        </div>
+
+        </div>
+     
+    </main>
+    <footer>
+        <p>©️ Copyright s4059119. All Rights Reserved | Designed For Pets Victoria</p>
+    </footer>
+</body>
+</html>

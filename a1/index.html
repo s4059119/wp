@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Victoria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ysabeau+SC&family=Poetsen+One&family=Permanent+Marker&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt="Pets Victoria Logo"></a>
+            <select id="pageSelector" onchange="navigateToPage()">
+                <option value="index.html" selected>Select an option</option>
+                <option value="index.html">Home</option>
+                <option value="pets.html">Pets</option>
+                <option value="add.html">Add More</option>
+                <option value="gallery.html">Gallery</option>
+            </select>
+            <form>
+                <input type="text" placeholder="Search...">
+                <button type="submit" class="search-button">
+                    <span class="material-icons">search</span>
+                </button>
+            </form>
+        </nav>
+    </header>
+    <main class="home-page">
+        <div class="text-section">
+            <h1 class="main-title">PETS VICTORIA</h1>
+            <p class="welcome-text">WELCOME TO PET<br>ADOPTION</p>
+        </div>
+        <div class="image-section">
+            <img src="images/main.jpg" alt="Main Image" class="circle">
+        </div>
+    </main>
+    <footer>
+        <p>©️ Copyright s4059119 . All Rights Reserved | Designed For Pets Victoria</p>
+    </footer>
+</body>
+</html>

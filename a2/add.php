@@ -29,7 +29,54 @@ include_once('includes/header.inc');
                 <option value="cat">Cat</option>
             </select>
         </div>
+<br>
 
-        
+        <div>
+            <label for="PetDescription">Description: <span class="required">*</span></label>
+            <input type="text" id="PetDescription" name="PetDescription" class="form-input" placeholder="Describe the pet briefly" required>
+        </div>
+
+        <br>
+
+        <div class="file-upload">
+            <label for="PetImage">Select an Image <span class="required">*</span></label>
+            <input type="file" id="PetImage" name="PetImage" accept="image/*" required>
+            <span class="image-size-info">Max image size: 500KB</span>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="ImageCaption">Image Caption: <span class="required">*</span></label>
+            <input type="text" id="ImageCaption" name="ImageCaption" class="form-input" placeholder="Describe the image in one word" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="PetAge">Age (Months): <span class="required">*</span></label>
+            <input type="number" id="PetAge" name="PetAge" class="form-input" placeholder="Age of a pet in months" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="PetLocation">Location: <span class="required">*</span></label>
+            <input type="text" id="PetLocation" name="PetLocation" class="form-input" placeholder="Location of the pet" required>
+        </div>
+
+        <br>
+
+        <div class="button-position">
+            <button type="submit" class="submit-form">
+                <span class="material-icons">add_task</span> Submit
+            </button>
+            <button type="reset" class="clear-form">
+                <span class="material-icons">close</span> Clear
+            </button>
+        </div>
+    </form>
+</main>
+<?php        
 include_once('includes/footer.inc');
 ?>

@@ -62,3 +62,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
+
+     if (empty($uploadError)) {
+        $sql = "INSERT INTO pets (petname, type, description, image, caption, age, location) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        $stmt = $connection->prepare($sql);
+        $stmt->bind_param('sssssss', $petName, $petType, $petDescription, $fileName, $imageCaption, $petAge, $petLocation);
+
+        if ($stmt->execute()) {
+            $successMessage = "Pet added successfully!";
+        } else {
+            $errorMessage = "Error adding pet: " . $connection->error;
+        }
+        $stmt->close();
+    }
+}
+
+
+$connection->close();
+
+if (isset($successMessage)) {
+    echo "<p class='success-message'>$successMessage</p>";
+} elseif (isset($errorMessage) || isset($uploadError)) {
+    echo "<p class='error-message'>";
+    if (isset($errorMessage)) {
+        echo $errorMessage;
+    }
+    if (isset($uploadError)) {
+        echo $uploadError;
+    }
+    echo "</p>";
+}
+?>

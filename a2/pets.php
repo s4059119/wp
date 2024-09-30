@@ -36,3 +36,46 @@ include_once('includes/header.inc');
                     <th>Location</th>
                 </tr>
             </thead>
+
+$sql = "SELECT petid, petname, type, age, location FROM pets";
+$stmt = mysqli_prepare($connection, $sql);  
+
+
+mysqli_stmt_execute($stmt);
+
+$result = mysqli_stmt_get_result($stmt);     
+
+
+if ($result && mysqli_num_rows($result) > 0) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    $petid = $row['petid'];
+    $petname = htmlspecialchars($row['petname']);
+    $type = htmlspecialchars($row['type']);
+    $age = htmlspecialchars($row['age']);
+    $location = htmlspecialchars($row['location']);
+
+    echo '<tr>
+              <td><a href="details.php?petid=' . $petid . '">' . $petname . '</a></td>
+              <td>' . ucfirst($type) . '</td>
+              <td>' . $age . '</td>
+              <td>' . $location . '</td>
+            </tr>';
+  }
+} else {
+
+  echo '<tr><td colspan="4">No pets found.</td></tr>';
+}
+
+
+mysqli_stmt_close($stmt);
+mysqli_close($connection);
+?>
+            </tbody>
+        </table>
+    </aside>
+</main>
+
+	<?php
+
+include_once('includes/footer.inc');
+?>

@@ -1,5 +1,5 @@
 <footer>
-		&copy; Copyright S4073657. Rayyan Sohail All Rights Reserved | Designed For Pets Victoria
+		&copy; Copyright S4059119. Harneert Kaur All Rights Reserved | Designed For Pets Victoria
 	</footer>
 </body>
 </html>

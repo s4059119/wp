@@ -12,9 +12,9 @@ if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
     $dbname = "s4059119";
 }
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$connection = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
 }

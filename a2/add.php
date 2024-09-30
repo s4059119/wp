@@ -12,8 +12,24 @@ include_once('includes/header.inc');
     <p class="p2">You can add a new pet here</p>
 </header>
 
+<main class="default-main">
+    <form action="process_add.php" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="PetName">Pet Name: <span class="required">*</span></label>
+            <input type="text" id="PetName" name="PetName" class="form-input" placeholder="Provide a name for the pet" required>
+        </div>
+        
+        <br>
 
+        <div>
+            <label for="PetType">Type: <span class="required">*</span></label>
+            <select id="PetType" name="PetType" class="form-input" required>
+                <option value="" disabled selected>--Choose an option--</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+            </select>
+        </div>
 
-<?php
+        
 include_once('includes/footer.inc');
 ?>

@@ -9,7 +9,7 @@
                         <a href="pets.php">Pets</a>
                         <a href="add.php">Add More</a>
                         <a href="gallery.php">Gallery</a>
-                        <a href="details.php">Details Page</a>
+                  
                     </div>
                 </div>
 

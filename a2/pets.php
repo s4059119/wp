@@ -23,3 +23,16 @@ include_once('includes/header.inc');
                         support programs, all aimed at promoting responsible pet ownership and reducing the number of homeless animals.</p>
     
         </header>
+
+        <main class="default-main">
+    <aside>
+        <img src="images/pets.jpeg" alt="Pets" class="pets">
+        <table>
+            <thead>
+                <tr>
+                    <th>Pet</th>
+                    <th>Type</th>
+                    <th>Age</th>
+                    <th>Location</th>
+                </tr>
+            </thead>

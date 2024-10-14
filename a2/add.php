@@ -13,7 +13,7 @@ include_once('includes/header.inc');
 </header>
 
 <main class="default-main">
-    <form action="process_add.php" method="post" enctype="multipart/form-data">
+    <form action="process_upload.php" method="post" enctype="multipart/form-data">
         <div>
             <label for="PetName">Pet Name: <span class="required">*</span></label>
             <input type="text" id="PetName" name="PetName" class="form-input" placeholder="Provide a name for the pet" required>

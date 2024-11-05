@@ -1,5 +1,5 @@
 <footer>
-		&copy; Copyright S4059119. Harneet Kaur All Rights Reserved | Designed For Pets Victoria
-	</footer>
-</body>
-</html>
+    <?php if (isset($_SESSION['username'])): ?>
+    <a href="user.php"><?= htmlspecialchars($_SESSION['username']) ?></a>
+    <?php endif; ?>
+    <br>

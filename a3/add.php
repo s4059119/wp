@@ -11,3 +11,5 @@ if (!isset($_SESSION['username'])) {
 include('includes/header.inc');
 include('includes/nav.inc');
 include("includes/db_connect.inc");
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -29,3 +29,16 @@ if ($selected_type) {
             <h3>Pets Victoria has a lot to offer!</h3>
             <p>For almost two decades, Pets Victoria has helped in creating true social change by bringing pet adoption into the mainstream. Our work has helped make a difference to the Victorian rescue community and thousands of pets in need of rescue and rehabilitation. But, until every pet is safe, respected, and loved, we all still have big, hairy work to do.</p>
         </div>
+
+        <select class="form-select mb-4 w-500 mx-auto" id="petType" onchange="filterByType()">
+            <option value="">Select type...</option>
+            <?php
+            while ($type_row = mysqli_fetch_assoc($type_result)) {
+                $type = htmlspecialchars($type_row['type']);
+                $selected = ($selected_type === $type) ? "selected" : "";
+                echo "<option value='$type' $selected>$type</option>";
+            }
+            ?>
+        </select>
+
+        <?php

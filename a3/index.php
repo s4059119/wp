@@ -38,7 +38,6 @@ if (isset($_SESSION['usrmsg'])): ?>
                 ?>
             </div>
 
-
             <div class="carousel-inner">
                 <?php
                 $isActive = true;
@@ -53,5 +52,14 @@ if (isset($_SESSION['usrmsg'])): ?>
                 $conn->close();
                 ?>
             </div>
+          
+            <button class="carousel-control-prev" type="button" data-bs-target="#petCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#petCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
 
     

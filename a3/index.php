@@ -37,3 +37,21 @@ if (isset($_SESSION['usrmsg'])): ?>
                 }
                 ?>
             </div>
+
+
+            <div class="carousel-inner">
+                <?php
+                $isActive = true;
+                $result->data_seek(0);  // Reset query pointer to the start
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="carousel-item' . ($isActive ? ' active' : '') . '">';
+                    echo '<img src="images/' . htmlspecialchars($row['image']) . '" class="d-block w-100" alt="Pet image">';
+                    echo '</div>';
+                    $isActive = false;
+                }
+
+                $conn->close();
+                ?>
+            </div>
+
+    

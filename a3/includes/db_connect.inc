@@ -11,3 +11,5 @@ if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
     $password = "helloworld";
     $dbname = "s4059119";
 }
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);

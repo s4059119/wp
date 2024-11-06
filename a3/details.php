@@ -46,3 +46,8 @@ $loggedInUsername = $_SESSION['username'] ?? '';
               </div>';
     }
     ?>
+</main>
+
+<?php
+include('includes/footer.inc');
+?>

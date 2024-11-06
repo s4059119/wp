@@ -9,3 +9,5 @@ error_reporting(E_ALL);
 
 <head>
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+	<title>Pets Victoria</title>

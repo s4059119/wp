@@ -87,3 +87,10 @@ mysqli_close($conn);
                 <button type="submit" class="btn submit-btn">submit</button>
                 <button type="reset" class="btn clear-btn">clear</button>
             </div>
+        </form>
+    </div>
+</section>
+
+<?php
+include('includes/footer.inc');
+?>

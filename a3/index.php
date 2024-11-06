@@ -12,3 +12,5 @@ if (isset($_SESSION['usrmsg'])): ?>
     </div>
     <?php unset($_SESSION['usrmsg']); ?>
 <?php endif; ?>
+
+<main class="main1">

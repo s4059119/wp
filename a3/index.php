@@ -100,6 +100,10 @@ if (isset($_SESSION['usrmsg'])): ?>
     </div> 
 
 </main>
+
+<?php
+include('includes/footer.inc');
+?>
     
 
        

@@ -22,3 +22,14 @@ $type = mysqli_real_escape_string($conn, $_POST['type']);
 $location = mysqli_real_escape_string($conn, $_POST['location']);
 $image = $_FILES['image']['name'];
 $username = $_SESSION['username']; // Retrieve the logged-in username from the session
+
+    // Handle image upload
+    $target_file = "images/" . basename($_FILES["image"]["name"]);
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $check = getimagesize($_FILES["image"]["tmp_name"]);
+    if ($check === false) {
+        die("File is not an image.");
+    }
+    if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+        die("There was an error uploading your file.");
+    }

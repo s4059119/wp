@@ -42,3 +42,22 @@ if ($selected_type) {
         </select>
 
         <?php
+        // Display pets based on selected type or all pets if no filter is applied
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<div class='responsive'>";
+                echo "<div class='gallery'>";
+                echo "<img src='images/" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['caption']) . "'>";
+                echo "<div class='overlay'>";
+                echo "<div class='text'>";
+                echo "<i class='material-icons' style='font-size:36px'>search</i>";
+                echo "<p><a href='details.php?id=" . $row['petid'] . "'>Discover more!</a></p>";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='name'>" . htmlspecialchars($row['petname']) . "</div>"; // Changed 'name' to 'petname'
+                echo "</div></div>";
+            }
+        } else {
+            echo "<p>No pets available at the moment.</p>";
+        }
+

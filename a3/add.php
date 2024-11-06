@@ -33,3 +33,7 @@ $username = $_SESSION['username']; // Retrieve the logged-in username from the s
     if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
         die("There was an error uploading your file.");
     }
+    
+    // Insert pet data including the username into the database
+    $sql = "INSERT INTO pets (petname, description, caption, age, type, location, image, username) 
+            VALUES ('$petname', '$description', '$caption', '$age', '$type', '$location', '$image', '$username')";

@@ -22,3 +22,10 @@ if ($selected_type) {
     $result = mysqli_query($conn, $pet_sql);
 }
 ?>
+
+<section class="main-section-4">
+    <div class="container">
+        <div class="textContent4">
+            <h3>Pets Victoria has a lot to offer!</h3>
+            <p>For almost two decades, Pets Victoria has helped in creating true social change by bringing pet adoption into the mainstream. Our work has helped make a difference to the Victorian rescue community and thousands of pets in need of rescue and rehabilitation. But, until every pet is safe, respected, and loved, we all still have big, hairy work to do.</p>
+        </div>

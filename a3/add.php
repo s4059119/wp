@@ -57,4 +57,29 @@ mysqli_close($conn);
             <p>You can add a new pet here</p>
         </div>
         <form action="add.php" class="addpetform" method="post" enctype="multipart/form-data">
-            
+            <label for="petname">Pet Name:</label>
+            <input type="text" id="petname" name="petname" placeholder="Provide a name for the pet" required>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="">--Choose an option--</option>
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Small Animal">Small Animal</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" placeholder="Describe the pet briefly" required></textarea>
+
+            <label for="image">Select an Image:</label>
+            <input type="file" id="image" name="image" required><br><br>
+
+            <label for="caption">Image Caption:</label>
+            <input type="text" id="caption" name="caption" placeholder="Describe the image in one word" required>
+
+            <label for="age">Age (months):</label>
+            <input type="text" id="age" name="age" placeholder="Age of the pet in months" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Location of the pet" required>
+                          

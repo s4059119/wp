@@ -36,3 +36,13 @@ $loggedInUsername = $_SESSION['username'] ?? '';
             <p><?= htmlspecialchars($row['location']) ?></p>
         </div>
     </div>
+
+    <?php
+    // Check if the logged-in user is the owner of the pet
+    if ($row['username'] === $loggedInUsername) { // Ensure 'username' is the column that holds the pet owner's username
+        echo '<div class="button-container" style="margin-top: 20px; margin-bottom: 20px;">
+                <a href="edit.php?id=' . htmlspecialchars($row['petid']) . '" class="btn btn-primary" style="margin-right: 10px;">Edit</a>
+                <a href="delete.php?id=' . htmlspecialchars($row['petid']) . '" class="btn btn-danger">Delete</a>
+              </div>';
+    }
+    ?>

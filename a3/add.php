@@ -49,3 +49,7 @@ $username = $_SESSION['username']; // Retrieve the logged-in username from the s
 
 mysqli_close($conn);
 ?>
+
+<section class="main-section-3">
+    <div class="container">
+        <div class="textContent3">

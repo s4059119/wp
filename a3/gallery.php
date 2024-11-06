@@ -61,10 +61,22 @@ if ($selected_type) {
             echo "<p>No pets available at the moment.</p>";
         }
 
-    <script>
-        function filterByType() {
-            const selectedType = document.getElementById('petType').value;
-            window.location.href = 'gallery.php?type=' + selectedType;
-        }
-    </script>
+        mysqli_close($conn);
+        ?>
+
+        <div class="clearfix"></div>
+    </div>
+</section>
+
+<script>
+    function filterByType() {
+        const selectedType = document.getElementById('petType').value;
+        window.location.href = 'gallery.php?type=' + selectedType;
+    }
+</script>
+
+<?php
+include('includes/footer.inc');
+?>
+
 

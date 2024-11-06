@@ -83,6 +83,11 @@ if (isset($_SESSION['usrmsg'])): ?>
            </div>
        </form>
 
+       <div class="container container-discover mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="fw-bold">Discover Pets Victoria</h2>
+
        
 
     

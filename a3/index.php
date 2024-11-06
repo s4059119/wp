@@ -98,6 +98,8 @@ if (isset($_SESSION['usrmsg'])): ?>
             </div>
         </div>
     </div> 
+
+</main>
     
 
        

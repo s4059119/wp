@@ -22,3 +22,17 @@ $loggedInUsername = $_SESSION['username'] ?? '';
         <p class="detailsDescription"><?= htmlspecialchars($row['description']) ?></p>
     </div>
 
+    <div class="detailsContainer">
+        <div class="detailsInfo">
+            <i class="material-icons">access_alarm</i><br>
+            <p><?= $row['age'] ?> months</p>
+        </div>
+        <div class="detailsInfo">
+            <span class="material-symbols-outlined">pets</span><br>
+            <p><?= $row['type'] ?></p>
+        </div>
+        <div class="detailsInfo">
+            <i class="material-icons">location_on</i><br>
+            <p><?= htmlspecialchars($row['location']) ?></p>
+        </div>
+    </div>

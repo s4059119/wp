@@ -14,3 +14,9 @@ if (isset($_SESSION['usrmsg'])): ?>
 <?php endif; ?>
 
 <main class="main1">
+    <div class="container">
+        <div class="textContent1">
+            <h1>PETS VICTORIA</h1>
+            <h2>WELCOME TO PET <br>ADOPTION</h2>
+        </div>
+        <div id="petCarousel" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">

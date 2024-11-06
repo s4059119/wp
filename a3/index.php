@@ -20,3 +20,20 @@ if (isset($_SESSION['usrmsg'])): ?>
             <h2>WELCOME TO PET <br>ADOPTION</h2>
         </div>
         <div id="petCarousel" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <?php
+                $indicatorIndex = 0;
+                // Change the ordering column to an existing one, e.g., 'petid'
+                $sql = "SELECT image FROM pets ORDER BY petid DESC LIMIT 4"; // Adjust 'petid' as necessary
+                $result = $conn->query($sql);
+
+                while ($indicatorIndex < $result->num_rows) {
+                    echo '<button type="button" data-bs-target="#petCarousel" data-bs-slide-to="' . $indicatorIndex . '"';
+                    echo ($indicatorIndex === 0) ? ' class="active" aria-current="true"' : '';
+                    echo '></button>';
+                    $indicatorIndex++;
+                }
+                ?>
+            </div>

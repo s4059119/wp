@@ -53,3 +53,8 @@ mysqli_close($conn);
 <section class="main-section-3">
     <div class="container">
         <div class="textContent3">
+            <h3>Add a pet</h3>
+            <p>You can add a new pet here</p>
+        </div>
+        <form action="add.php" class="addpetform" method="post" enctype="multipart/form-data">
+            

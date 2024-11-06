@@ -17,3 +17,8 @@ $loggedInUsername = $_SESSION['username'] ?? '';
 <main>
     <img class="detailsImg" src="images/<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['petname']) ?>">
     
+    <div class="detailsTextContainer">
+        <p class="detailsName"><?= htmlspecialchars($row['petname']) ?></p>
+        <p class="detailsDescription"><?= htmlspecialchars($row['description']) ?></p>
+    </div>
+

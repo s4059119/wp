@@ -46,3 +46,6 @@ $username = $_SESSION['username']; // Retrieve the logged-in username from the s
         echo "Error: " . mysqli_error($conn);
     }
 }
+
+mysqli_close($conn);
+?>

@@ -13,3 +13,10 @@ include('includes/nav.inc');
 include("includes/db_connect.inc");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// Get form data and escape it for security
+$petname = mysqli_real_escape_string($conn, $_POST['petname']);
+$description = mysqli_real_escape_string($conn, $_POST['description']);
+$caption = mysqli_real_escape_string($conn, $_POST['caption']);
+$age = (float) $_POST['age'];
+$type = mysqli_real_escape_string($conn, $_POST['type']);
+$location = mysqli_real_escape_string($conn, $_POST['location']);

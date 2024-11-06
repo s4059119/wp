@@ -13,3 +13,7 @@ $row = mysqli_fetch_array($result);
 // Get the logged-in user's username from the session
 $loggedInUsername = $_SESSION['username'] ?? ''; 
 ?>
+
+<main>
+    <img class="detailsImg" src="images/<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['petname']) ?>">
+    

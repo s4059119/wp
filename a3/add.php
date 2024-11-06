@@ -20,3 +20,5 @@ $caption = mysqli_real_escape_string($conn, $_POST['caption']);
 $age = (float) $_POST['age'];
 $type = mysqli_real_escape_string($conn, $_POST['type']);
 $location = mysqli_real_escape_string($conn, $_POST['location']);
+$image = $_FILES['image']['name'];
+$username = $_SESSION['username']; // Retrieve the logged-in username from the session

@@ -8,3 +8,4 @@ error_reporting(E_ALL);
 <html lang="en">
 
 <head>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">

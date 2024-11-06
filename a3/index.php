@@ -62,4 +62,27 @@ if (isset($_SESSION['usrmsg'])): ?>
         </div>
     </div>
 
+    <div class="bottom-section">
+       
+       <form action="search.php" method="GET">
+           <div class="row align-items-center custom-row">
+               <div class="col-md-5 col-12 mb-2 mb-md-0">
+                   <input type="text" class="form-control" name="desc" placeholder="I am looking for...">
+               </div>
+               <div class="col-md-5 col-12 mb-2 mb-md-0">
+                   <select class="form-select" name="type" required>
+                       <option value="" disabled selected>Select pet type</option>
+                       <option value="dog">Dogs</option>
+                       <option value="cat">Cats</option>
+                       <option value="other">Others</option>
+                   </select>
+               </div>
+               <div class="col-md-2 col-12">
+                   <button type="submit" class="btn btn-success w-100">Search</button>
+               </div>
+           </div>
+       </form>
+
+       
+
     

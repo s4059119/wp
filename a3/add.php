@@ -82,4 +82,8 @@ mysqli_close($conn);
 
             <label for="location">Location:</label>
             <input type="text" id="location" name="location" placeholder="Location of the pet" required>
-                          
+            
+            <div class="button-group">
+                <button type="submit" class="btn submit-btn">submit</button>
+                <button type="reset" class="btn clear-btn">clear</button>
+            </div>

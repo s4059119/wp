@@ -43,3 +43,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['username'], $_POST['p
         <p style="color: red;"><?= $_SESSION['err'] ?></p>
         <?php unset($_SESSION['err']); ?>
     <?php endif; ?>
+    <form action="login.php" method="post">
+        <div class="mb-3 mt-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" id="username" class="form-control w-50" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" class="form-control w-50" required>
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Login" class="btn btn-primary">
+        </div>
+    </form>
+</main>
+
+<?php
+include('includes/footer.inc');
+?>

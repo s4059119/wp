@@ -46,3 +46,28 @@ include("includes/db_connect.inc");
                 $stmt->bind_param(str_repeat('s', count($params)), ...$params);
                 $stmt->execute();
                 $result = $stmt->get_result();
+
+                if ($result->num_rows > 0) {
+                    while ($pet = $result->fetch_assoc()) {
+                        echo "<div class='responsive'>";
+                        echo "<div class='gallery'>";
+                        echo "<img src='images/" . htmlspecialchars($pet['image'] ?? '') . "' alt='" . htmlspecialchars($pet['caption'] ?? '') . "'>";
+                        echo "<div class='overlay'>";
+                        echo "<div class='text'>";
+                        echo "<i class='material-icons' style='font-size:36px'>search</i>";
+                        echo "<p><a href='details.php?id=" . htmlspecialchars($pet['petid'] ?? '') . "'>Discover more!</a></p>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "<div class='name'>" . htmlspecialchars($pet['petname'] ?? '') . "</div>";
+                        echo "</div></div>";
+                    }
+                } else {
+                    echo "<p>No pets found matching your criteria.</p>";
+                }
+            }
+            ?>
+        </div>
+    </div>
+</main>
+
+<?php include('includes/footer.inc'); ?>

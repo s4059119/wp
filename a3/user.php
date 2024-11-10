@@ -34,3 +34,40 @@ $result = $stmt->get_result();
                     <p class="detailsName"><?= htmlspecialchars($row['petname']) ?></p>
                     <p class="detailsDescription"><?= htmlspecialchars($row['description']) ?></p>
                 </div>
+
+                <div class="detailsContainer">
+                    <div class="detailsInfo">
+                        <i class="material-icons">access_alarm</i><br>
+                        <p><?= $row['age'] ?> months</p>
+                    </div>
+                    <div class="detailsInfo">
+                        <span class="material-symbols-outlined">pets</span><br>
+                        <p><?= $row['type'] ?></p>
+                    </div>
+                    <div class="detailsInfo">
+                        <i class="material-icons">location_on</i><br>
+                        <p><?= htmlspecialchars($row['location']) ?></p>
+                    </div>
+                </div>
+
+                <?php
+                // Check if the logged-in user is the owner of the pet
+                if ($row['username'] === $username) { // Use the correct variable for the logged-in username
+                    echo '<div class="button-container" style="margin-top: 20px; margin-bottom: 20px;">
+                            <a href="edit.php?id=' . htmlspecialchars($row['petid']) . '" class="btn btn-primary" style="margin-right: 10px;">Edit</a>
+                            <a href="delete.php?id=' . htmlspecialchars($row['petid']) . '" class="btn btn-danger">Delete</a>
+                          </div>';
+                }
+                ?>
+            </div>
+            <?php
+        }
+    } else {
+        echo "<p>No pets found for this user.</p>";
+    }
+    ?>
+</main>
+
+<?php
+include('includes/footer.inc');
+?>

@@ -27,3 +27,14 @@ if (!$pet) {
 }
 
 $oldImage = $pet['image'];
+
+// Process form submission for updating pet details
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $petname = $_POST['petname'];
+    $description = $_POST['description'];
+    $caption = $_POST['caption'];
+    $age = (float) $_POST['age'];
+    $type = $_POST['type'];
+    $location = $_POST['location'];
+    $username = $_SESSION['username'];
+    $image = $oldImage;

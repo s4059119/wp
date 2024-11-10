@@ -60,3 +60,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             unlink("images/" . $oldImage);
         }
     }
+
+    // Update pet details
+    $stmt = $conn->prepare("UPDATE pets SET petname = ?, description = ?, caption = ?, age = ?, type = ?, location = ?, image = ?, username = ? WHERE petid = ?");
+    $stmt->bind_param("sssissssi", $petname, $description, $caption, $age, $type, $location, $image, $username, $id);
+
+    if ($stmt->execute()) {
+        echo "Pet details updated successfully!";
+        header('Location: pets.php'); // Redirect to the pets page after successful update
+        exit();
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+}
+
+mysqli_close($conn);
+?>

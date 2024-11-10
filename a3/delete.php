@@ -51,3 +51,18 @@ if (isset($_POST['confirm_delete'])) {
 mysqli_close($conn);
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Pet</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete <?= htmlspecialchars($pet['petname']) ?>?</h3>
+    <form action="delete.php?id=<?= htmlspecialchars($id) ?>" method="post">
+        <input type="hidden" name="confirm_delete" value="1">
+        <button type="submit" onclick="return confirm('Are you sure you want to delete this pet? This action cannot be undone.');">Yes, delete</button>
+        <a href="pets.php">Cancel</a>
+    </form>
+</body>
+</html>

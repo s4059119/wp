@@ -76,3 +76,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 mysqli_close($conn);
 ?>
+
+<section class="main-section-3">
+    <div class="container">
+        <div class="textContent3">
+            <h3>Edit Pet Details</h3>
+            <p>Edit the details of your pet below.</p>
+        </div>
+        <form action="edit.php?id=<?= htmlspecialchars($id) ?>" class="addpetform" method="post" enctype="multipart/form-data">
+            <label for="petname">Pet Name:</label>
+            <input type="text" id="petname" name="petname" value="<?= htmlspecialchars($pet['petname']) ?>" required>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="">--Choose an option--</option>
+                <option value="Dog" <?= $pet['type'] == 'Dog' ? 'selected' : '' ?>>Dog</option>
+                <option value="Cat" <?= $pet['type'] == 'Cat' ? 'selected' : '' ?>>Cat</option>
+                <option value="Small Animal" <?= $pet['type'] == 'Small Animal' ? 'selected' : '' ?>>Small Animal</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" required><?= htmlspecialchars($pet['description']) ?></textarea>
+
+            <label for="image">Select a New Image (optional):</label>
+            <input type="file" id="image" name="image"><br><br>
+
+            <label for="caption">Image Caption:</label>
+            <input type="text" id="caption" name="caption" value="<?= htmlspecialchars($pet['caption']) ?>" required>
+
+            <label for="age">Age (months):</label>
+            <input type="text" id="age" name="age" value="<?= htmlspecialchars($pet['age']) ?>" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="<?= htmlspecialchars($pet['location']) ?>" required>
+                          
+            <div class="button-group">
+                <button type="submit" class="btn submit-btn">Update</button>
+                <button type="reset" class="btn clear-btn">Clear</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<?php
+include('includes/footer.inc');
+?>
+

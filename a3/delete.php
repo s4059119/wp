@@ -28,3 +28,26 @@ if (!$pet) {
 }
 
 $oldImage = $pet['image'];
+
+// If the deletion is confirmed via JavaScript, proceed with deletion
+if (isset($_POST['confirm_delete'])) {
+    // Prepare the deletion query
+    $stmt = $conn->prepare("DELETE FROM pets WHERE petid = ?");
+    $stmt->bind_param("i", $id);
+
+    if ($stmt->execute()) {
+        // Delete the image file if it exists
+        if (file_exists("images/" . $oldImage)) {
+            unlink("images/" . $oldImage);
+        }
+        echo "Pet deleted successfully!";
+        header("Location: pets.php"); // Redirect to the pets page after deletion
+        exit();
+    } else {
+        echo "Error deleting record: " . $conn->error;
+    }
+}
+
+mysqli_close($conn);
+?>
+

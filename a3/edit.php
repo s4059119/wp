@@ -38,3 +38,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $location = $_POST['location'];
     $username = $_SESSION['username'];
     $image = $oldImage;
+
+    // Handle image upload if a new file is uploaded
+    if (!empty($_FILES['image']['name'])) {
+        $image = $_FILES['image']['name'];
+        $target_file = "images/" . basename($image);
+
+        // Validate the image file
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if ($check === false) {
+            die("File is not an image.");
+        }
+
+        // Move the new image to the images folder
+        if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+            die("There was an error uploading your file.");
+        }
+
+        // Delete the old image file if a new one was uploaded
+        if (file_exists("images/" . $oldImage) && $oldImage !== $image) {
+            unlink("images/" . $oldImage);
+        }
+    }

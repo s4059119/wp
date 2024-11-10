@@ -50,3 +50,7 @@ include("includes/db_connect.inc");
             
         </div>
     </section>
+
+    <?php
+include('includes/footer.inc');
+?>

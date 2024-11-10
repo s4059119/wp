@@ -11,3 +11,11 @@ if (!isset($_SESSION['username'])) {
 }
 
 $username = $_SESSION['username']; // Get the logged-in username
+
+// Query to get pets uploaded by the logged-in user
+$stmt = $conn->prepare("SELECT * FROM pets WHERE username = ?"); 
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+
+?>
